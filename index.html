@@ -1,0 +1,2144 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HealthFit - Personalized 7-Week Diet Plan</title>
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+    <style>
+
+        :root {
+
+            --primary: #4e73df;
+
+            --secondary: #1cc88a;
+
+            --dark: #5a5c69;
+
+            --light: #f8f9fc;
+
+            --danger: #e74a3b;
+
+            --warning: #f6c23e;
+
+        }
+
+        
+
+        * {
+
+            margin: 0;
+
+            padding: 0;
+
+            box-sizing: border-box;
+
+            font-family: 'Nunito', sans-serif;
+
+        }
+
+        
+
+        body {
+
+            background-color: var(--light);
+
+            color: var(--dark);
+
+            line-height: 1.6;
+
+        }
+
+        
+
+        @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap');
+
+        
+
+        .container {
+
+            max-width: 1200px;
+
+            margin: 0 auto;
+
+            padding: 0 20px;
+
+        }
+
+        
+
+        header {
+
+            background: linear-gradient(135deg, var(--primary), #224abe);
+
+            color: white;
+
+            padding: 2rem 0;
+
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+            position: relative;
+
+            overflow: hidden;
+
+        }
+
+        
+
+        header::before {
+
+            content: '';
+
+            position: absolute;
+
+            top: 0;
+
+            left: 0;
+
+            width: 100%;
+
+            height: 100%;
+
+            background: url('https://images.unsplash.com/photo-1498837167922-ddd27525d352?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover;
+
+            opacity: 0.1;
+
+            z-index: 0;
+
+        }
+
+        
+
+        .header-content {
+
+            position: relative;
+
+            z-index: 1;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            flex-wrap: wrap;
+
+        }
+
+        
+
+        .logo {
+
+            font-size: 2rem;
+
+            font-weight: 800;
+
+            display: flex;
+
+            align-items: center;
+
+        }
+
+        
+
+        .logo span {
+
+            color: var(--secondary);
+
+        }
+
+        
+
+        .logo i {
+
+            margin-right: 10px;
+
+            font-size: 2.5rem;
+
+        }
+
+        
+
+        nav ul {
+
+            display: flex;
+
+            list-style: none;
+
+        }
+
+        
+
+        nav ul li {
+
+            margin-left: 2rem;
+
+        }
+
+        
+
+        nav ul li a {
+
+            color: white;
+
+            text-decoration: none;
+
+            font-weight: 600;
+
+            transition: all 0.3s ease;
+
+        }
+
+        
+
+        nav ul li a:hover {
+
+            color: var(--secondary);
+
+        }
+
+        
+
+        .hero {
+
+            text-align: center;
+
+            padding: 4rem 0;
+
+            position: relative;
+
+        }
+
+        
+
+        .hero h1 {
+
+            font-size: 3.5rem;
+
+            margin-bottom: 1.5rem;
+
+            color: white;
+
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+
+        }
+
+        
+
+        .hero p {
+
+            font-size: 1.2rem;
+
+            max-width: 700px;
+
+            margin: 0 auto 2rem;
+
+            color: rgba(255, 255, 255, 0.9);
+
+        }
+
+        
+
+        .btn {
+
+            display: inline-block;
+
+            background-color: var(--secondary);
+
+            color: white;
+
+            padding: 0.8rem 2rem;
+
+            border-radius: 50px;
+
+            text-decoration: none;
+
+            font-weight: 700;
+
+            transition: all 0.3s ease;
+
+            border: none;
+
+            cursor: pointer;
+
+            font-size: 1rem;
+
+            box-shadow: 0 4px 15px rgba(28, 200, 138, 0.4);
+
+        }
+
+        
+
+        .btn:hover {
+
+            transform: translateY(-3px);
+
+            box-shadow: 0 6px 20px rgba(28, 200, 138, 0.6);
+
+            background-color: #17a673;
+
+        }
+
+        
+
+        .btn-outline {
+
+            background-color: transparent;
+
+            border: 2px solid white;
+
+            margin-left: 1rem;
+
+            box-shadow: none;
+
+        }
+
+        
+
+        .btn-outline:hover {
+
+            background-color: white;
+
+            color: var(--primary);
+
+        }
+
+        
+
+        .assessment-container {
+
+            background-color: white;
+
+            border-radius: 10px;
+
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+
+            padding: 3rem;
+
+            margin: -50px auto 5rem;
+
+            position: relative;
+
+            z-index: 10;
+
+            max-width: 900px;
+
+        }
+
+        
+
+        .assessment-intro {
+
+            text-align: center;
+
+            margin-bottom: 3rem;
+
+        }
+
+        
+
+        .assessment-intro h2 {
+
+            font-size: 2.2rem;
+
+            color: var(--primary);
+
+            margin-bottom: 1rem;
+
+        }
+
+        
+
+        .assessment-intro p {
+
+            color: var(--dark);
+
+            font-size: 1.1rem;
+
+        }
+
+        
+
+        .question {
+
+            display: none;
+
+            animation: fadeIn 0.5s ease;
+
+        }
+
+        
+
+        .question.active {
+
+            display: block;
+
+        }
+
+        
+
+        .question h3 {
+
+            font-size: 1.5rem;
+
+            margin-bottom: 1.5rem;
+
+            color: var(--dark);
+
+        }
+
+        
+
+        .options {
+
+            display: grid;
+
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+            gap: 1rem;
+
+            margin-bottom: 2rem;
+
+        }
+
+        
+
+        .option {
+
+            background-color: var(--light);
+
+            border: 2px solid #e3e6f0;
+
+            border-radius: 8px;
+
+            padding: 1.5rem;
+
+            cursor: pointer;
+
+            transition: all 0.3s ease;
+
+            text-align: center;
+
+        }
+
+        
+
+        .option:hover {
+
+            border-color: var(--primary);
+
+            transform: translateY(-5px);
+
+            box-shadow: 0 5px 15px rgba(78, 115, 223, 0.2);
+
+        }
+
+        
+
+        .option.selected {
+
+            background-color: rgba(78, 115, 223, 0.1);
+
+            border-color: var(--primary);
+
+        }
+
+        
+
+        .option i {
+
+            font-size: 2rem;
+
+            margin-bottom: 1rem;
+
+            color: var(--primary);
+
+        }
+
+        
+
+        .option h4 {
+
+            margin-bottom: 0.5rem;
+
+            color: var(--dark);
+
+        }
+
+        
+
+        .option p {
+
+            color: #858796;
+
+            font-size: 0.9rem;
+
+        }
+
+        
+
+        .progress-bar {
+
+            height: 10px;
+
+            background-color: #e3e6f0;
+
+            border-radius: 5px;
+
+            margin-bottom: 2rem;
+
+            overflow: hidden;
+
+        }
+
+        
+
+        .progress {
+
+            height: 100%;
+
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+
+            width: 0%;
+
+            transition: width 0.5s ease;
+
+        }
+
+        
+
+        .navigation {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            margin-top: 2rem;
+
+        }
+
+        
+
+        .btn-prev {
+
+            background-color: #e3e6f0;
+
+            color: var(--dark);
+
+        }
+
+        
+
+        .btn-prev:hover {
+
+            background-color: #d1d3e2;
+
+            color: var(--dark);
+
+            box-shadow: none;
+
+        }
+
+        
+
+        .btn-next {
+
+            background-color: var(--primary);
+
+        }
+
+        
+
+        .btn-next:hover {
+
+            background-color: #2e59d9;
+
+            box-shadow: 0 6px 20px rgba(78, 115, 223, 0.6);
+
+        }
+
+        
+
+        .result {
+
+            display: none;
+
+            animation: fadeIn 1s ease;
+
+        }
+
+        
+
+        .result.active {
+
+            display: block;
+
+        }
+
+        
+
+        .result-header {
+
+            text-align: center;
+
+            margin-bottom: 3rem;
+
+        }
+
+        
+
+        .result-header h2 {
+
+            font-size: 2.2rem;
+
+            color: var(--primary);
+
+            margin-bottom: 1rem;
+
+        }
+
+        
+
+        .result-header p {
+
+            color: var(--dark);
+
+            font-size: 1.1rem;
+
+            max-width: 700px;
+
+            margin: 0 auto;
+
+        }
+
+        
+
+        .diet-plan {
+
+            background-color: var(--light);
+
+            border-radius: 10px;
+
+            padding: 2rem;
+
+            margin-bottom: 2rem;
+
+        }
+
+        
+
+        .diet-plan h3 {
+
+            color: var(--primary);
+
+            margin-bottom: 1.5rem;
+
+            font-size: 1.8rem;
+
+            text-align: center;
+
+        }
+
+        
+
+        .weeks {
+
+            display: grid;
+
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+            gap: 1.5rem;
+
+        }
+
+        
+
+        .week {
+
+            background-color: white;
+
+            border-radius: 8px;
+
+            padding: 1.5rem;
+
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+
+            transition: all 0.3s ease;
+
+        }
+
+        
+
+        .week:hover {
+
+            transform: translateY(-5px);
+
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+
+        }
+
+        
+
+        .week h4 {
+
+            color: var(--secondary);
+
+            margin-bottom: 1rem;
+
+            font-size: 1.3rem;
+
+            text-align: center;
+
+            border-bottom: 2px solid #e3e6f0;
+
+            padding-bottom: 0.5rem;
+
+        }
+
+        
+
+        .week ul {
+
+            list-style-position: inside;
+
+        }
+
+        
+
+        .week li {
+
+            margin-bottom: 0.5rem;
+
+            color: var(--dark);
+
+        }
+
+        
+
+        .result-actions {
+
+            text-align: center;
+
+            margin-top: 2rem;
+
+        }
+
+        
+
+        .features {
+
+            padding: 5rem 0;
+
+            background-color: #f8f9fc;
+
+        }
+
+        
+
+        .section-title {
+
+            text-align: center;
+
+            margin-bottom: 3rem;
+
+        }
+
+        
+
+        .section-title h2 {
+
+            font-size: 2.5rem;
+
+            color: var(--primary);
+
+            margin-bottom: 1rem;
+
+        }
+
+        
+
+        .section-title p {
+
+            color: var(--dark);
+
+            font-size: 1.1rem;
+
+            max-width: 700px;
+
+            margin: 0 auto;
+
+        }
+
+        
+
+        .features-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+            gap: 2rem;
+
+        }
+
+        
+
+        .feature {
+
+            background-color: white;
+
+            border-radius: 10px;
+
+            padding: 2rem;
+
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+
+            transition: all 0.3s ease;
+
+            text-align: center;
+
+        }
+
+        
+
+        .feature:hover {
+
+            transform: translateY(-10px);
+
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+
+        }
+
+        
+
+        .feature i {
+
+            font-size: 3rem;
+
+            color: var(--primary);
+
+            margin-bottom: 1.5rem;
+
+            background: linear-gradient(135deg, var(--primary), #224abe);
+
+            -webkit-background-clip: text;
+
+            -webkit-text-fill-color: transparent;
+
+        }
+
+        
+
+        .feature h3 {
+
+            font-size: 1.5rem;
+
+            margin-bottom: 1rem;
+
+            color: var(--dark);
+
+        }
+
+        
+
+        .feature p {
+
+            color: #858796;
+
+        }
+
+        
+
+        footer {
+
+            background: linear-gradient(135deg, var(--dark), #3a3b45);
+
+            color: white;
+
+            padding: 3rem 0 1.5rem;
+
+        }
+
+        
+
+        .footer-content {
+
+            display: grid;
+
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+            gap: 2rem;
+
+            margin-bottom: 2rem;
+
+        }
+
+        
+
+        .footer-column h3 {
+
+            font-size: 1.3rem;
+
+            margin-bottom: 1.5rem;
+
+            color: var(--secondary);
+
+        }
+
+        
+
+        .footer-column ul {
+
+            list-style: none;
+
+        }
+
+        
+
+        .footer-column ul li {
+
+            margin-bottom: 0.8rem;
+
+        }
+
+        
+
+        .footer-column ul li a {
+
+            color: #d1d3e2;
+
+            text-decoration: none;
+
+            transition: all 0.3s ease;
+
+        }
+
+        
+
+        .footer-column ul li a:hover {
+
+            color: var(--secondary);
+
+        }
+
+        
+
+        .social-links {
+
+            display: flex;
+
+            gap: 1rem;
+
+        }
+
+        
+
+        .social-links a {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            width: 40px;
+
+            height: 40px;
+
+            background-color: rgba(255, 255, 255, 0.1);
+
+            border-radius: 50%;
+
+            color: white;
+
+            transition: all 0.3s ease;
+
+        }
+
+        
+
+        .social-links a:hover {
+
+            background-color: var(--secondary);
+
+            transform: translateY(-3px);
+
+        }
+
+        
+
+        .copyright {
+
+            text-align: center;
+
+            padding-top: 1.5rem;
+
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+            color: #d1d3e2;
+
+            font-size: 0.9rem;
+
+        }
+
+        
+
+        @keyframes fadeIn {
+
+            from { opacity: 0; transform: translateY(20px); }
+
+            to { opacity: 1; transform: translateY(0); }
+
+        }
+
+        
+
+        /* Responsive styles */
+
+        @media (max-width: 768px) {
+
+            .header-content {
+
+                flex-direction: column;
+
+                text-align: center;
+
+            }
+
+            
+
+            nav ul {
+
+                margin-top: 1.5rem;
+
+                justify-content: center;
+
+            }
+
+            
+
+            nav ul li {
+
+                margin: 0 0.5rem;
+
+            }
+
+            
+
+            .hero h1 {
+
+                font-size: 2.5rem;
+
+            }
+
+            
+
+            .assessment-container {
+
+                padding: 2rem 1.5rem;
+
+                margin: -30px auto 3rem;
+
+            }
+
+            
+
+            .options {
+
+                grid-template-columns: 1fr;
+
+            }
+
+            
+
+            .btn-outline {
+
+                margin-left: 0;
+
+                margin-top: 1rem;
+
+                display: block;
+
+                width: 100%;
+
+            }
+
+        }
+
+    </style>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+
+<body>
+
+    <header>
+
+        <div class="container">
+
+            <div class="header-content">
+
+                <div class="logo">
+
+                    <i class="fas fa-heartbeat"></i>
+
+                    Health<span>Fit</span>
+
+                </div>
+
+                <nav>
+
+                    <ul>
+
+                        <li><a href="https://tasktrivialaggregated.com/pm4iedt4?key=7dff20f1335834aea01eda2def2335f6">Home</a></li>
+
+                        <li><a href="https://tasktrivialaggregated.com/pm4iedt4?key=7dff20f1335834aea01eda2def2335f6">About</a></li>
+
+                        <li><a href="https://tasktrivialaggregated.com/pm4iedt4?key=7dff20f1335834aea01eda2def2335f6">Services</a></li>
+
+                        <li><a href="https://tasktrivialaggregated.com/pm4iedt4?key=7dff20f1335834aea01eda2def2335f6">Contact</a></li>
+
+                    </ul>
+
+                </nav>
+
+            </div>
+
+            <center> <script type="text/javascript">
+	atOptions = {
+		'key' : '70469c4e213c262c0881860e24290a46',
+		'format' : 'iframe',
+		'height' : 90,
+		'width' : 728,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//tasktrivialaggregated.com/70469c4e213c262c0881860e24290a46/invoke.js"></script> </center>
+
+            <div class="hero">
+
+                <h1 class="animate__animated animate__fadeInDown">Your Personalized 7-Week Diet Plan</h1>
+
+                <p class="animate__animated animate__fadeInDown animate__delay-1s">Answer 5 simple questions and get a customized diet plan tailored to your health goals and lifestyle.</p>
+
+
+                <a href="#assessment" class="btn animate__animated animate__fadeInUp animate__delay-2s">Start Assessment</a>
+
+            </div>
+
+        </div>
+
+
+
+
+
+
+
+    </header>
+
+    
+
+    <main>
+
+        <section id="assessment">
+
+            <div class="container">
+
+                <div class="assessment-container">
+
+                    <div class="assessment-intro">
+
+<center><script type="text/javascript">
+	atOptions = {
+		'key' : '70469c4e213c262c0881860e24290a46',
+		'format' : 'iframe',
+		'height' : 90,
+		'width' : 728,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//tasktrivialaggregated.com/70469c4e213c262c0881860e24290a46/invoke.js"></script></center>
+
+                        <h2>Health Assessment</h2>
+
+                        <p>Please answer these 5 questions to help us create your personalized 7-week diet plan.</p>
+
+                    </div>
+
+                    
+
+                    <div class="progress-bar">
+
+                        <div class="progress" id="progress"></div>
+
+                    </div>
+
+                    
+
+                    <form id="healthForm">
+
+                        <!-- Question 1 -->
+
+                        <div class="question active" id="question1">
+
+                            <h3>What is your primary health goal?</h3>
+
+                            <div class="options">
+
+                                <div class="option" data-value="weight-loss">
+
+                                    <i class="fas fa-weight"></i>
+
+                                    <h4>Weight Loss</h4>
+
+                                    <p>I want to lose excess body fat</p>
+
+                                </div>
+
+                                <div class="option" data-value="muscle-gain">
+
+                                    <i class="fas fa-dumbbell"></i>
+
+                                    <h4>Muscle Gain</h4>
+
+                                    <p>I want to build lean muscle mass</p>
+
+                                </div>
+
+                                <div class="option" data-value="maintenance">
+
+                                    <i class="fas fa-balance-scale"></i>
+
+                                    <h4>Maintenance</h4>
+
+                                    <p>I want to maintain my current weight</p>
+
+                                </div>
+
+                                <div class="option" data-value="energy">
+
+                                    <i class="fas fa-bolt"></i>
+
+                                    <h4>Energy Boost</h4>
+
+                                    <p>I want more energy throughout the day</p>
+
+                                </div>
+
+                            </div>
+
+                            <div class="navigation">
+
+                                <button type="button" class="btn btn-prev" disabled>Previous</button>
+
+                                <button type="button" class="btn btn-next">Next</button>
+
+                            </div>
+
+                        </div>
+
+                        
+
+                        <!-- Question 2 -->
+
+                        <div class="question" id="question2">
+
+                            <h3>How would you describe your current activity level?</h3>
+
+                            <div class="options">
+
+                                <div class="option" data-value="sedentary">
+
+                                    <i class="fas fa-couch"></i>
+
+                                    <h4>Sedentary</h4>
+
+                                    <p>Little to no exercise</p>
+
+                                </div>
+
+                                <div class="option" data-value="light">
+
+                                    <i class="fas fa-walking"></i>
+
+                                    <h4>Lightly Active</h4>
+
+                                    <p>Light exercise 1-3 days/week</p>
+
+                                </div>
+
+                                <div class="option" data-value="moderate">
+
+                                    <i class="fas fa-running"></i>
+
+                                    <h4>Moderately Active</h4>
+
+                                    <p>Moderate exercise 3-5 days/week</p>
+
+                                </div>
+
+                                <div class="option" data-value="very">
+
+                                    <i class="fas fa-fire"></i>
+
+                                    <h4>Very Active</h4>
+
+                                    <p>Hard exercise 6-7 days/week</p>
+
+                                </div>
+
+                            </div>
+
+                            <div class="navigation">
+
+                                <button type="button" class="btn btn-prev">Previous</button>
+
+                                <button type="button" class="btn btn-next">Next</button>
+
+                            </div>
+
+                        </div>
+
+                        
+
+                        <!-- Question 3 -->
+
+                        <div class="question" id="question3">
+
+                            <h3>Do you have any dietary restrictions?</h3>
+
+                            <div class="options">
+
+                                <div class="option" data-value="none">
+
+                                    <i class="fas fa-check-circle"></i>
+
+                                    <h4>None</h4>
+
+                                    <p>I eat all types of food</p>
+
+                                </div>
+
+                                <div class="option" data-value="vegetarian">
+
+                                    <i class="fas fa-leaf"></i>
+
+                                    <h4>Vegetarian</h4>
+
+                                    <p>I don't eat meat</p>
+
+                                </div>
+
+                                <div class="option" data-value="vegan">
+
+                                    <i class="fas fa-seedling"></i>
+
+                                    <h4>Vegan</h4>
+
+                                    <p>I don't eat any animal products</p>
+
+                                </div>
+
+                                <div class="option" data-value="gluten-free">
+
+                                    <i class="fas fa-bread-slice"></i>
+
+                                    <h4>Gluten-Free</h4>
+
+                                    <p>I avoid gluten</p>
+
+                                </div>
+
+                            </div>
+
+                            <div class="navigation">
+
+                                <button type="button" class="btn btn-prev">Previous</button>
+
+                                <button type="button" class="btn btn-next">Next</button>
+
+                            </div>
+
+                        </div>
+
+                        
+
+                        <!-- Question 4 -->
+
+                        <div class="question" id="question4">
+
+                            <h3>How many meals do you typically eat per day?</h3>
+
+                            <div class="options">
+
+                                <div class="option" data-value="2">
+
+                                    <i class="fas fa-2"></i>
+
+                                    <h4>2 Meals</h4>
+
+                                    <p>I usually skip breakfast or dinner</p>
+
+                                </div>
+
+                                <div class="option" data-value="3">
+
+                                    <i class="fas fa-3"></i>
+
+                                    <h4>3 Meals</h4>
+
+                                    <p>Breakfast, lunch, and dinner</p>
+
+                                </div>
+
+                                <div class="option" data-value="4">
+
+                                    <i class="fas fa-4"></i>
+
+                                    <h4>4 Meals</h4>
+
+                                    <p>3 main meals + 1 snack</p>
+
+                                </div>
+
+                                <div class="option" data-value="5">
+
+                                    <i class="fas fa-5"></i>
+
+                                    <h4>5+ Meals</h4>
+
+                                    <p>I prefer smaller, frequent meals</p>
+
+                                </div>
+
+                            </div>
+
+                            <div class="navigation">
+
+                                <button type="button" class="btn btn-prev">Previous</button>
+
+                                <button type="button" class="btn btn-next">Next</button>
+
+                            </div>
+
+                        </div>
+
+                        
+
+                        <!-- Question 5 -->
+
+                        <div class="question" id="question5">
+
+                            <h3>What time do you usually have your last meal?</h3>
+
+                            <div class="options">
+
+                                <div class="option" data-value="early">
+
+                                    <i class="fas fa-sun"></i>
+
+                                    <h4>Before 7 PM</h4>
+
+                                    <p>I finish eating early in the evening</p>
+
+                                </div>
+
+                                <div class="option" data-value="medium">
+
+                                    <i class="fas fa-cloud-sun"></i>
+
+                                    <h4>7-9 PM</h4>
+
+                                    <p>I eat dinner at a typical time</p>
+
+                                </div>
+
+                                <div class="option" data-value="late">
+
+                                    <i class="fas fa-moon"></i>
+
+                                    <h4>After 9 PM</h4>
+
+                                    <p>I often eat late at night</p>
+
+                                </div>
+
+                                <div class="option" data-value="varies">
+
+                                    <i class="fas fa-random"></i>
+
+                                    <h4>Varies</h4>
+
+                                    <p>My schedule changes daily</p>
+
+                                </div>
+
+                            </div>
+
+                            <div class="navigation">
+
+                                <button type="button" class="btn btn-prev">Previous</button>
+
+                                <button type="button" class="btn" id="submitBtn">Get My Plan</button>
+
+                            </div>
+
+                        </div>
+
+                    </form>
+
+                    
+
+                    <!-- Results Section -->
+
+                    <div class="result" id="result">
+
+                        <div class="result-header">
+
+                            <h2>Your Personalized 7-Week Diet Plan</h2>
+
+                            <p>Based on your answers, we've created this customized plan to help you achieve your health goals.</p>
+
+                        </div>
+
+                        
+
+                        <div class="diet-plan">
+
+                            <h3>Weekly Breakdown</h3>
+
+                            <div class="weeks">
+
+                                <div class="week">
+
+                                    <h4>Week 1: Detox & Preparation</h4>
+
+                                    <ul>
+
+                                        <li>Focus on whole, unprocessed foods</li>
+
+                                        <li>Eliminate added sugars</li>
+
+                                        <li>Increase water intake</li>
+
+                                        <li>Begin portion control</li>
+
+                                    </ul>
+
+                                </div>
+
+                                <div class="week">
+
+                                    <h4>Week 2: Macronutrient Balance</h4>
+
+                                    <ul>
+
+                                        <li>40% carbs, 30% protein, 30% fat</li>
+
+                                        <li>Introduce healthy fats</li>
+
+                                        <li>Increase vegetable intake</li>
+
+                                        <li>Start tracking meals</li>
+
+                                    </ul>
+
+                                </div>
+
+                                <div class="week">
+
+                                    <h4>Week 3: Metabolic Boost</h4>
+
+                                    <ul>
+
+                                        <li>Incorporate intermittent fasting</li>
+
+                                        <li>Add probiotic foods</li>
+
+                                        <li>Increase protein at breakfast</li>
+
+                                        <li>Reduce processed carbs</li>
+
+                                    </ul>
+
+                                </div>
+
+                                <div class="week">
+
+                                    <h4>Week 4: Gut Health Focus</h4>
+
+                                    <ul>
+
+                                        <li>Fermented foods daily</li>
+
+                                        <li>Increase fiber intake</li>
+
+                                        <li>Reduce inflammatory foods</li>
+
+                                        <li>Herbal teas for digestion</li>
+
+                                    </ul>
+
+                                </div>
+
+                                <div class="week">
+
+                                    <h4>Week 5: Energy Optimization</h4>
+
+                                    <ul>
+
+                                        <li>Timed nutrient intake</li>
+
+                                        <li>Pre-workout nutrition</li>
+
+                                        <li>Post-workout recovery</li>
+
+                                        <li>Smart snacking</li>
+
+                                    </ul>
+
+                                </div>
+
+                                <div class="week">
+
+                                    <h4>Week 6: Hormonal Balance</h4>
+
+                                    <ul>
+
+                                        <li>Foods to support hormones</li>
+
+                                        <li>Stress-reducing nutrition</li>
+
+                                        <li>Sleep-supportive foods</li>
+
+                                        <li>Mindful eating practices</li>
+
+                                    </ul>
+
+                                </div>
+
+                                <div class="week">
+
+                                    <h4>Week 7: Lifestyle Integration</h4>
+
+                                    <ul>
+
+                                        <li>Sustainable habits</li>
+
+                                        <li>Meal prep strategies</li>
+
+                                        <li>Eating out guidelines</li>
+
+                                        <li>Long-term maintenance</li>
+
+                                    </ul>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        
+
+                        <div class="result-actions">
+
+                            <button class="btn" id="restartBtn">Start Over</button>
+
+                            <a href="#" class="btn btn-outline">Download Full Plan</a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <center><script type="text/javascript">
+	atOptions = {
+		'key' : '70469c4e213c262c0881860e24290a46',
+		'format' : 'iframe',
+		'height' : 90,
+		'width' : 728,
+		'params' : {}
+	};
+</script>
+<script type="text/javascript" src="//tasktrivialaggregated.com/70469c4e213c262c0881860e24290a46/invoke.js"></script></center>
+
+        <section class="features">
+
+            <div class="container">
+
+                <div class="section-title">
+
+                    <h2>Why Choose Our Diet Plans</h2>
+
+                    <p>Our scientifically-backed approach delivers real results tailored to your unique needs</p>
+
+                </div>
+
+                
+
+                <div class="features-grid">
+
+                    <div class="feature animate__animated animate__fadeInUp">
+
+                        <i class="fas fa-clipboard-check"></i>
+
+                        <h3>Personalized Approach</h3>
+
+                        <p>Every plan is customized based on your health assessment, goals, and preferences.</p>
+
+                    </div>
+
+                    <div class="feature animate__animated animate__fadeInUp animate__delay-1s">
+
+                        <i class="fas fa-calendar-alt"></i>
+
+                        <h3>7-Week Structure</h3>
+
+                        <p>Gradual, sustainable changes that lead to long-term success without deprivation.</p>
+
+                    </div>
+
+                    <div class="feature animate__animated animate__fadeInUp animate__delay-2s">
+
+                        <i class="fas fa-utensils"></i>
+
+                        <h3>Flexible Meal Plans</h3>
+
+                        <p>Varied, delicious recipes that fit your lifestyle and dietary restrictions.</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    
+
+    <footer>
+
+        <div class="container">
+
+            <div class="footer-content">
+
+                <div class="footer-column">
+
+                    <h3>HealthFit</h3>
+
+                    <p>Helping you achieve your health goals through personalized nutrition plans since 2015.</p>
+
+                    <div class="social-links">
+
+                        <a href="https://tasktrivialaggregated.com/pm4iedt4?key=7dff20f1335834aea01eda2def2335f6"><i class="fab fa-facebook-f"></i></a>
+
+                        <a href="https://tasktrivialaggregated.com/pm4iedt4?key=7dff20f1335834aea01eda2def2335f6"><i class="fab fa-twitter"></i></a>
+
+                        <a href="https://tasktrivialaggregated.com/pm4iedt4?key=7dff20f1335834aea01eda2def2335f6"><i class="fab fa-instagram"></i></a>
+
+                        <a href="https://tasktrivialaggregated.com/pm4iedt4?key=7dff20f1335834aea01eda2def2335f6"><i class="fab fa-youtube"></i></a>
+
+                    </div>
+
+                </div>
+
+                <div class="footer-column">
+
+                    <h3>Quick Links</h3>
+
+                    <ul>
+
+                        <li><a href="https://tasktrivialaggregated.com/pm4iedt4?key=7dff20f1335834aea01eda2def2335f6">Home</a></li>
+
+                        <li><a href="https://tasktrivialaggregated.com/pm4iedt4?key=7dff20f1335834aea01eda2def2335f6">About Us</a></li>
+
+                        <li><a href="https://tasktrivialaggregated.com/pm4iedt4?key=7dff20f1335834aea01eda2def2335f6">Services</a></li>
+
+                        <li><a href="https://tasktrivialaggregated.com/pm4iedt4?key=7dff20f1335834aea01eda2def2335f6">Testimonials</a></li>
+
+                        <li><a href="https://tasktrivialaggregated.com/pm4iedt4?key=7dff20f1335834aea01eda2def2335f6">Contact</a></li>
+
+                    </ul>
+
+                </div>
+
+                <div class="footer-column">
+
+                    <h3>Services</h3>
+
+                    <ul>
+
+                        <li><a href="https://tasktrivialaggregated.com/pm4iedt4?key=7dff20f1335834aea01eda2def2335f6">Diet Plans</a></li>
+
+                        <li><a href="https://tasktrivialaggregated.com/pm4iedt4?key=7dff20f1335834aea01eda2def2335f6">Nutrition Coaching</a></li>
+
+                        <li><a href="https://tasktrivialaggregated.com/pm4iedt4?key=7dff20f1335834aea01eda2def2335f6">Meal Prep Guides</a></li>
+
+                        <li><a href="https://tasktrivialaggregated.com/pm4iedt4?key=7dff20f1335834aea01eda2def2335f6">Corporate Wellness</a></li>
+
+                        <li><a href="https://tasktrivialaggregated.com/pm4iedt4?key=7dff20f1335834aea01eda2def2335f6">Recipes</a></li>
+
+                    </ul>
+
+                </div>
+
+                <div class="footer-column">
+
+                    <h3>Contact</h3>
+
+                    <ul>
+
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Health St, Fitness City</li>
+
+                        <li><i class="fas fa-phone"></i> (123) 456-7890</li>
+
+
+                        <li><i class="fas fa-envelope"></i> info@healthfit.com</li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+            
+
+            <div class="copyright">
+
+                <p>&copy; 2023 HealthFit. All rights reserved.</p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+    
+
+    <script>
+
+        document.addEventListener('DOMContentLoaded', function() {
+
+            // Question navigation
+
+            const questions = document.querySelectorAll('.question');
+
+            const prevBtns = document.querySelectorAll('.btn-prev');
+
+            const nextBtns = document.querySelectorAll('.btn-next');
+
+            const submitBtn = document.getElementById('submitBtn');
+
+            const restartBtn = document.getElementById('restartBtn');
+
+            const progressBar = document.getElementById('progress');
+
+
+            const options = document.querySelectorAll('.option');
+
+            const form = document.getElementById('healthForm');
+
+            const result = document.getElementById('result');
+
+            
+
+            let currentQuestion = 0;
+
+            const totalQuestions = questions.length;
+
+            const answers = {};
+
+            
+
+            // Update progress bar
+
+            function updateProgress() {
+
+                const progress = ((currentQuestion + 1) / totalQuestions) * 100;
+
+                progressBar.style.width = `${progress}%`;
+
+            }
+
+            
+
+            // Show current question and hide others
+
+            function showQuestion(index) {
+
+                questions.forEach((question, i) => {
+
+                    question.classList.toggle('active', i === index);
+
+                });
+
+                
+
+                // Update button states
+
+                prevBtns.forEach(btn => {
+
+                    btn.disabled = index === 0;
+
+                });
+
+                
+
+                updateProgress();
+
+            }
+
+            
+
+            // Next button click handler
+
+            nextBtns.forEach(btn => {
+
+                btn.addEventListener('click', function() {
+
+                    if (currentQuestion < totalQuestions - 1) {
+
+                        currentQuestion++;
+
+                        showQuestion(currentQuestion);
+
+                    }
+
+                });
+
+            });
+
+            
+
+            // Previous button click handler
+
+            prevBtns.forEach(btn => {
+
+                btn.addEventListener('click', function() {
+
+                    if (currentQuestion > 0) {
+
+                        currentQuestion--;
+
+                        showQuestion(currentQuestion);
+
+                    }
+
+                });
+
+            });
+
+            
+
+            // Option selection handler
+
+            options.forEach(option => {
+
+                option.addEventListener('click', function() {
+
+                    // Remove selected class from all options in this question
+
+                    const parentQuestion = this.closest('.question');
+
+                    parentQuestion.querySelectorAll('.option').forEach(opt => {
+
+                        opt.classList.remove('selected');
+
+                    });
+
+                    
+
+                    // Add selected class to clicked option
+
+                    this.classList.add('selected');
+
+                    
+
+                    // Store the answer
+
+                    const questionId = parentQuestion.id;
+
+                    answers[questionId] = this.getAttribute('data-value');
+
+                });
+
+            });
+
+            
+
+            // Submit form handler
+
+            submitBtn.addEventListener('click', function() {
+
+                // Check if all questions are answered
+
+                const answeredQuestions = Object.keys(answers).length;
+
+                if (answeredQuestions < totalQuestions) {
+
+                    alert('Please answer all questions before submitting.');
+
+                    return;
+
+                }
+
+                
+
+                // Hide form and show results
+
+                form.style.display = 'none';
+
+                result.classList.add('active');
+
+                
+
+                // Scroll to results
+
+                result.scrollIntoView({ behavior: 'smooth' });
+
+                
+
+                // Here you would typically send the data to a server
+
+                console.log('User answers:', answers);
+
+                
+
+                // Based on answers, you could customize the diet plan further
+
+                customizePlan(answers);
+
+            });
+
+            
+
+            // Restart assessment handler
+
+            restartBtn.addEventListener('click', function() {
+
+                // Reset all answers
+
+                Object.keys(answers).forEach(key => delete answers[key]);
+
+                
+
+                // Reset selected options
+
+                options.forEach(option => {
+
+                    option.classList.remove('selected');
+
+                });
+
+                
+
+                // Reset to first question
+
+                currentQuestion = 0;
+
+                showQuestion(currentQuestion);
+
+                
+
+                // Show form and hide results
+
+                form.style.display = 'block';
+
+                result.classList.remove('active');
+
+                
+
+                // Scroll to top
+
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            });
+
+            
+
+            // Customize plan based on answers (simplified example)
+
+            function customizePlan(answers) {
+
+                // In a real application, you would customize the plan based on answers
+
+                // This is just a simplified example
+
+                const goal = answers['question1'];
+
+                const activity = answers['question2'];
+
+                const diet = answers['question3'];
+
+                
+
+                // You could modify the displayed plan based on these answers
+
+                // For now, we'll just log them
+
+                console.log(`Customizing plan for: ${goal}, ${activity}, ${diet}`);
+
+            }
+
+            
+
+            // Initialize
+
+            showQuestion(0);
+
+            
+
+            // Animate features when they come into view
+
+            const features = document.querySelectorAll('.feature');
+
+            
+
+            const observer = new IntersectionObserver((entries) => {
+
+                entries.forEach(entry => {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.classList.add('animate__fadeInUp');
+
+                    }
+
+                });
+
+            }, { threshold: 0.1 });
+
+            
+
+            features.forEach(feature => {
+
+                observer.observe(feature);
+
+            });
+
+        });
+
+    </script>
+
+</body>
+
+ 
+
+</html>
